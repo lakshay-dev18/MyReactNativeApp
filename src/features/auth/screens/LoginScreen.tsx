@@ -23,18 +23,32 @@ function LoginScreen() {
           <Text style={styles.label3}>Forgot Password?</Text>
         </View>
 
-        <TouchableOpacity style={styles.button}> <Text style={styles.buttonText}>Login</Text> </TouchableOpacity>
+        <TouchableOpacity style={styles.button}> 
+          <Text style={styles.buttonText}>Login</Text> 
+        </TouchableOpacity>
 
-        <View style={styles.dividerContainer}> <View style={styles.line} /> <Text style={styles.dividerText}>Or Login with</Text> <View style={styles.line} /> </View>
+        <View style={styles.dividerContainer}> 
+          <View style={styles.line} /> 
+            <Text style={styles.dividerText}>Or Login with</Text> 
+            <View style={styles.line} /> 
+        </View>
 
         <View style={styles.socialContainer}>
-          <TouchableOpacity style={styles.socialButton}> <Image source={require('../../assets/fb.png')} style={styles.socialIcon} /> </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButton}> 
+            <Image source={require('../../../../assets/fb.png')} style={styles.socialIcon} /> 
+          </TouchableOpacity>
 
-          <TouchableOpacity style={styles.socialButton}> <Image source={require('../../assets/google.png')} style={styles.socialIcon} /> </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButton}> 
+            <Image source={require('../../../../assets/google.png')} style={styles.socialIcon} /> 
+          </TouchableOpacity>
 
-          <TouchableOpacity style={styles.socialButton}> <Image source={require('../../assets/ios.png')} style={styles.socialIcon} /> </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButton}> 
+            <Image source={require('../../../../assets/ios.png')} style={styles.socialIcon} /> 
+          </TouchableOpacity>
         </View>
-        <Text style={styles.registerText}> Don't have an account?{' '} <Text style={styles.registerNow}>Register Now</Text> </Text>
+        <Text style={styles.registerText}> Don't have an account?{' '} 
+          <Text style={styles.registerNow}>Register Now</Text> 
+        </Text>
       </View>
     </View>
   );

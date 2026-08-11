@@ -13,7 +13,9 @@ function RegisterScreen() {
           <Text style= {styles.buttonText2}>{'<'}</Text> 
       </TouchableOpacity>
 
-      <View style={styles.container1}> <Text style={styles.text1}> Hello! Register to get Started </Text> </View>
+      <View style={styles.container1}> 
+        <Text style={styles.text1}> Hello! Register to get Started </Text> 
+      </View>
 
       <View style={styles.container2}>
         <TextInput style={styles.input} placeholder="Enter your Name" />
@@ -24,19 +26,35 @@ function RegisterScreen() {
 
         <TextInput style={styles.input} placeholder="Confirm Password" secureTextEntry />
 
-        <TouchableOpacity style={styles.button2}> <Text style={styles.buttonText1}>Register</Text> </TouchableOpacity>
+        <TouchableOpacity style={styles.button2}> 
+          <Text style={styles.buttonText1}>Register</Text> 
+        </TouchableOpacity>
 
-        <View style={styles.dividerContainer}> <View style={styles.line} /> <Text style={styles.dividerText}>Or Register with</Text> <View style={styles.line} /> </View>
-
-        <View style={styles.socialContainer}>
-          <TouchableOpacity style={styles.socialButton}> <Image source={require('../../assets/fb.png')} style={styles.socialIcon} /> </TouchableOpacity>
-
-          <TouchableOpacity style={styles.socialButton}> <Image source={require('../../assets/google.png')} style={styles.socialIcon} /> </TouchableOpacity>
-
-          <TouchableOpacity style={styles.socialButton}> <Image source={require('../../assets/ios.png')} style={styles.appleIcon} /> </TouchableOpacity>
+        <View style={styles.dividerContainer}>
+           <View style={styles.line} /> 
+            <Text style={styles.dividerText}>Or Register with</Text> 
+          <View style={styles.line} /> 
         </View>
 
-        <View style={styles.register}> <Text style={styles.registerText}> Already have an account? <Text style={styles.registerNow}> Login Now </Text> </Text> </View>
+        <View style={styles.socialContainer}>
+          <TouchableOpacity style={styles.socialButton}> 
+            <Image source={require('../../../../assets/fb.png')} style={styles.socialIcon} /> 
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.socialButton}> 
+            <Image source={require('../../../../assets/google.png')} style={styles.socialIcon} /> 
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.socialButton}> 
+            <Image source={require('../../../../assets/ios.png')} style={styles.appleIcon} /> 
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.register}> 
+          <Text style={styles.registerText}> Already have an account? 
+            <Text style={styles.registerNow}> Login Now </Text> 
+          </Text> 
+        </View>
       </View>
     </View>
   );
