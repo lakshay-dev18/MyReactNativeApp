@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from '@expo/vector-icons';
 
 function RegisterScreen() {
   const navigation = useNavigation();
@@ -10,11 +11,11 @@ function RegisterScreen() {
           style={styles.button1} 
           onPress={() => navigation.goBack()} > 
           
-          <Text style= {styles.buttonText2}>{'<'}</Text> 
+          <Ionicons name="chevron-back" size={24} color="black" /> 
       </TouchableOpacity>
 
       <View style={styles.container1}> 
-        <Text style={styles.text1}> Hello! Register to get Started </Text> 
+        <Text style={styles.text1}>Hello! Register to get Started </Text> 
       </View>
 
       <View style={styles.container2}>
