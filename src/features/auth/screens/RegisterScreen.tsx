@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from '@expo/vector-icons';
+import CommonButton from '../../../components/CommonButton';
+import { FontAwesome } from '@expo/vector-icons';
 
 function RegisterScreen() {
   const navigation = useNavigation();
@@ -27,9 +29,8 @@ function RegisterScreen() {
 
         <TextInput style={styles.input} placeholder="Confirm Password" secureTextEntry />
 
-        <TouchableOpacity style={styles.button2}> 
-          <Text style={styles.buttonText1}>Register</Text> 
-        </TouchableOpacity>
+        
+        <CommonButton title="Register"  buttonStyle={styles.button2} textStyle={styles.buttonText1} />
 
         <View style={styles.dividerContainer}>
            <View style={styles.line} /> 
@@ -39,15 +40,16 @@ function RegisterScreen() {
 
         <View style={styles.socialContainer}>
           <TouchableOpacity style={styles.socialButton}> 
-            <Image source={require('../../../../assets/fb.png')} style={styles.socialIcon} /> 
+            <FontAwesome name="facebook" size={20} color="blue" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.socialButton}> 
+            {/* <FontAwesome name="google" size={20} color="red" /> */}
             <Image source={require('../../../../assets/google.png')} style={styles.socialIcon} /> 
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.socialButton}> 
-            <Image source={require('../../../../assets/ios.png')} style={styles.appleIcon} /> 
+          <TouchableOpacity style={styles.socialButton}>
+            <FontAwesome name="apple" size={20} color="black" />
           </TouchableOpacity>
         </View>
 
@@ -63,7 +65,7 @@ function RegisterScreen() {
 
 const styles = StyleSheet.create({
   text1: { fontWeight: "bold", fontSize: 35, },
-  input:{ borderWidth: 1, borderColor: 'gray', borderRadius: 8, padding: 12, marginBottom: 20, width: 320, textAlign:'center', },
+  input:{ borderWidth: 1, borderColor: 'gray', borderRadius: 8, padding: 12, marginBottom: 20, width: 320, },
   buttonText1:{ color:'white', alignItems:'center', },
   container:{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', },
   button2:{ backgroundColor: 'black', padding: 15, width: 320, borderRadius: 10, marginBottom: 15, alignItems:'center' },

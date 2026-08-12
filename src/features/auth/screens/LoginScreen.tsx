@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import CommonButton from '../../../components/CommonButton';
+import { FontAwesome } from '@expo/vector-icons';
 
 function LoginScreen() {
   const navigation = useNavigation();
@@ -67,11 +69,8 @@ function LoginScreen() {
         </Text>
 
         
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>
-            Login
-          </Text>
-        </TouchableOpacity>
+        
+        <CommonButton title="Login"  buttonStyle={styles.button} textStyle={styles.buttonText} />
 
         
         <View style={styles.dividerContainer}>
@@ -88,24 +87,16 @@ function LoginScreen() {
         <View style={styles.socialContainer}>
 
           <TouchableOpacity style={styles.socialButton}>
-            <Image
-              source={require('../../../../assets/fb.png')}
-              style={styles.socialIcon}
-            />
+            <FontAwesome name="facebook" size={20} color="blue" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.socialButton}>
-            <Image
-              source={require('../../../../assets/google.png')}
-              style={styles.socialIcon}
-            />
+            <Image source={require('../../../../assets/google.png')} style={styles.socialIcon} /> 
+            {/* <FontAwesome name="google" size={20} color="red" /> */}
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.socialButton}>
-            <Image
-              source={require('../../../../assets/ios.png')}
-              style={styles.appleIcon}
-            />
+            <FontAwesome name="apple" size={20} color="black" />
           </TouchableOpacity>
 
         </View>
@@ -172,14 +163,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
   },
 
   buttonText1: {
@@ -293,7 +276,7 @@ const styles = StyleSheet.create({
   registerNow: {
     color: '#00B3B0',
   },
-  appleIcon: { width: 50, resizeMode: 'contain', },
+  appleIcon: { width: 50, resizeMode: 'contain' },
 });
 
 export default LoginScreen;

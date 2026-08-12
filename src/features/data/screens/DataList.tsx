@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   registerButtonText:{ color: "black", textAlign: "center", fontSize: 18, paddingVertical: 15, },
   loginButton:{ backgroundColor: "black", borderRadius: 10, width: "100%", marginBottom: 15, padding: 8, borderWidth: 2 },
   loginButtonText:{ color: "white", textAlign: "center", fontSize: 18, paddingVertical: 15, },
-  continueButton:{ padding: 2,  },
+  continueButton:{},
   continueButtonText:{borderBottomWidth: 1, borderBottomColor: '#00B3B0',},
   logo: { width: 350, height: 480, marginBottom: 60, },
 
