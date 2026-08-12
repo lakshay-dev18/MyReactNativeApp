@@ -11,7 +11,7 @@ function LoginScreen() {
   return (
     <View style={styles.container}>
 
-      {/* Back Button */}
+      
       <TouchableOpacity
         style={styles.button1}
         onPress={() => navigation.goBack()}
@@ -23,7 +23,7 @@ function LoginScreen() {
         />
       </TouchableOpacity>
 
-      {/* Welcome Text */}
+      
       <View style={styles.container1}>
         <Text style={styles.text}>
           Welcome back! Glad to see you, Again!
@@ -32,7 +32,7 @@ function LoginScreen() {
 
       <View style={styles.container2}>
 
-        {/* Email Field */}
+        
         <View style={styles.label1}>
           <TextInput
             style={styles.input1}
@@ -40,7 +40,7 @@ function LoginScreen() {
           />
         </View>
 
-        {/* Password Field */}
+        
         <View style={styles.passwordContainer}>
 
           <TextInput
@@ -54,26 +54,26 @@ function LoginScreen() {
           >
             <Ionicons
               name={showPassword ? 'eye-off' : 'eye'}
-              size={20}
+              size={25}
               color="gray"
             />
           </TouchableOpacity>
 
         </View>
 
-        {/* Forgot Password */}
+        
         <Text style={styles.label3}>
           Forgot Password?
         </Text>
 
-        {/* Login Button */}
+        
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>
             Login
           </Text>
         </TouchableOpacity>
 
-        {/* Divider */}
+        
         <View style={styles.dividerContainer}>
           <View style={styles.line} />
 
@@ -84,7 +84,7 @@ function LoginScreen() {
           <View style={styles.line} />
         </View>
 
-        {/* Social Buttons */}
+        
         <View style={styles.socialContainer}>
 
           <TouchableOpacity style={styles.socialButton}>
@@ -110,7 +110,7 @@ function LoginScreen() {
 
         </View>
 
-        {/* Register */}
+        
         <Text style={styles.registerText}>
           Don't have an account?{' '}
           <Text style={styles.registerNow}>
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  /* Login Button */
+  
   button: {
     backgroundColor: 'black',
     padding: 15,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  /* Back Button */
+  
   button1: {
     position: 'absolute',
     top: 50,
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
 
-  /* Divider */
+  
   dividerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
-  /* Social Buttons */
+  
   socialContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 
-  /* Register */
+  
   registerText: {
     color: 'black',
     textAlign: 'center',
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
   registerNow: {
     color: '#00B3B0',
   },
-  appleIcon: { width: 52, resizeMode: 'contain', },
+  appleIcon: { width: 50, resizeMode: 'contain', },
 });
 
 export default LoginScreen;
