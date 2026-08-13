@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
     alignItems: 'center',
     paddingTop: 50,
   },

@@ -1,6 +1,9 @@
 import { FlatList, View, StyleSheet, Text } from 'react-native';
 import { useState } from 'react';
 import CommonButton from '../../../../src/components/CommonButton';
+import axios from "axios";
+
+
 
 function Data() {
   type Post = {
@@ -14,33 +17,47 @@ const [posts, setPosts] = useState<Post[]>([]);
 
   const getData = async () => {
     
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/posts'
-      );
+      const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const info= await response.data;
+      // const response = await fetch(
+      //   'https://jsonplaceholder.typicode.com/posts'
+      // );
 
-      const info = await response.json();
+      // const info = await response.json();
 
       setPosts(info);
       
   };
 
     const postData = async () => {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/posts',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: 'My Post',
-          body: 'This is my own data',
-          userId: 1,
-        }),
-      }
-    );
+      const data = {
+        body: 'This my own data',
+        userId: 1
+      };
+      const response = await axios.patch("https://jsonplaceholder.typicode.com/posts/1",data
+        // {
+            // title: 'My Post',
+            // body: 'This my own data',
+            // userId: 1,
+        // }
+      );  
+          console.log(response.data);
+    //   const response = await fetch(
+    //     'https://jsonplaceholder.typicode.com/posts',
+    //   {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       title: 'My Post',
+    //       body: 'This is my own data',
+    //       userId: 1,
+    //     }),
+    //   }
+    // );
 
-    const data = await response.json();
+    // const data = await response.json();
 
     // console.log(data);
   };
@@ -48,7 +65,7 @@ const [posts, setPosts] = useState<Post[]>([]);
   return (
     <View style={styles.container}>
 
-      <FlatList
+       <FlatList
         data={posts}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
@@ -84,10 +101,12 @@ const [posts, setPosts] = useState<Post[]>([]);
           textStyle={styles.dataButtonText}
         />
 
-        {/* <CommonButton
+        <CommonButton
             title="Post Data"
             onPress={postData}
-        /> */}
+            buttonStyle={styles.dataButton}
+            textStyle={styles.dataButtonText}
+        />
       </View>
 
     </View>
