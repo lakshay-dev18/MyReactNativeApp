@@ -26,7 +26,7 @@ const [posts, setPosts] = useState<Post[]>([]);
       // const info = await response.json();
 
       setPosts(info);
-      
+      console.log("Hello",getData);
   };
 
     const postData = async () => {
