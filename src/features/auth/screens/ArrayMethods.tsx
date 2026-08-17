@@ -17,11 +17,11 @@ const numbers=[1,2,3,4,5,6];
 
 //filter
 const filters = numbers.filter(number=> number>2);
-console.log(filters)
+// console.log(filters)
 
 //Some
-// const data = numbers.some(number=> number>6);
-// console.log(data)
+const data = numbers.some(number=> number>5);
+console.log(data)
 
 //Every
 // const num =[1,4,6,8,10]
@@ -34,5 +34,5 @@ console.log(filters)
 // console.log(data)
 
 //map
-const data = numbers.map(number=>number*2)
-console.log(data)
+// const data = numbers.map(number=>number*2)
+// console.log(data)

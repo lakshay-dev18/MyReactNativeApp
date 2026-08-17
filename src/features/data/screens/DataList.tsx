@@ -17,7 +17,7 @@ function WelcomeScreen({ navigation }: any) {
       <CommonButton title="Register" onPress={() => navigation.navigate('Register')} buttonStyle={styles.registerButton} textStyle={styles.registerButtonText} />
 
       {/* <CommonButton title="Continue as a guest" textColor="#00B3B0" buttonStyle={styles.continueButton} textStyle={styles.continueButtonText} onPress={()=> navigation.navigate('Data')} /> */}
-      <CommonButton title="Continue as a guest" textColor="#00B3B0" buttonStyle={styles.continueButton} textStyle={styles.continueButtonText} onPress={()=> navigation.navigate('TestError')} />    
+      <CommonButton title="Continue as a guest" textColor="#00B3B0" buttonStyle={styles.continueButton} textStyle={styles.continueButtonText} onPress={()=> navigation.navigate('Condition')} />    
       {/* <CommonButton title="Continue as a guest" textColor="#00B3B0" buttonStyle={styles.continueButton} textStyle={styles.continueButtonText} onPress={()=> navigation.navigate('JwtScreen')} /> */}
     </View>
   );

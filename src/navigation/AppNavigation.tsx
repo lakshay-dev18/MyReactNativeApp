@@ -4,10 +4,10 @@ import WelcomeScreen from '../../src/features/data/screens/DataList';
 import LoginScreen from '../../src/features/auth/screens/LoginScreen';
 import RegisterScreen from '../../src/features/auth/screens/RegisterScreen';
 import Data from '../../src/features/auth/api/Api';
-import Hook from '../features/auth/screens/Hooks';
+// import Hook from '../features/auth/screens/Hooks';
 import JwtScreen from '../../src/features/auth/api/JwtToken';
-import TestError from '../features/auth/screens/Hooks';
-
+// import TestError from '../features/auth/screens/Hooks';
+import Condition from '../../src/features/auth/screens/console'
 const Stack = createNativeStackNavigator();
 
 export default function Navigation() {
@@ -25,7 +25,8 @@ export default function Navigation() {
         {/* <Stack.Screen name="Data" component={Data} /> */}
         {/* <Stack.Screen name="Hook" component={Hook} /> */}
         {/* <Stack.Screen name="Jwt" component={JwtScreen} /> */}
-        <Stack.Screen name="Test" component={TestError} />
+        {/* <Stack.Screen name="Test" component={TestError} /> */}
+        <Stack.Screen name="Condition" component={Condition} />
       </Stack.Navigator>
     </NavigationContainer>
       
