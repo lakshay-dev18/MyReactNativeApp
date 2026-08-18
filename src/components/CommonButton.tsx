@@ -23,12 +23,7 @@ function CommonButton({
 }: CommonButtonProps) {
   return (
     <TouchableOpacity
-      style={[
-        styles.CommonButton,
-        { backgroundColor },
-        { padding },
-        buttonStyle,
-      ]}
+      style={[ styles.CommonButton, { backgroundColor }, { padding }, buttonStyle, ]}
       onPress={onPress}
     >
       <Text
