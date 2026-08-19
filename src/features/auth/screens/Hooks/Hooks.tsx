@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { View, StyleSheet, Text, TextInput , ScrollView} from 'react-native';
-import CommonButton from '../../../components/CommonButton';
+import CommonButton from '../../../../components/CommonButton';
 import axios from 'axios';
 
 // const Hook = () => {
