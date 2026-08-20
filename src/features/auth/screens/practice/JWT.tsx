@@ -63,3 +63,54 @@ export default function App() {
     </View>
   );
 }
+
+
+
+
+
+
+
+//How to use it - 
+// 1. Login and get JWT
+
+// const login = async () => {
+//     const response = await fetch("https://example.com/login", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//             email: "test@gmail.com",
+//             password: "123456",
+//         }),
+//     });
+
+//     const data = await response.json();
+
+//     const token = data.token;
+
+//     // 2. Store JWT
+//     await AsyncStorage.setItem("token", token);
+// };
+
+
+// // 3. Get JWT and use it
+
+// const getUsers = async () => {
+//     const token = await AsyncStorage.getItem("token");
+
+//     const response = await fetch("https://example.com/users", {
+//         headers: {
+//             Authorization: `Bearer ${token}`,
+//         },
+//     });
+
+//     const data = await response.json();
+
+//     console.log(data);
+// };
+
+//SecureStorage
+// import * as SecureStore from "expo-secure-store";
+
+// await SecureStore.setItemAsync("token", token);
