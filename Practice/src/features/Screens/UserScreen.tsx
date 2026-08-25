@@ -1,10 +1,13 @@
-import { View, StyleSheet, TextInput, Text, FlatList, Pressable, ActivityIndicator, } from 'react-native';
+import { View, TextInput, Text, FlatList, Pressable, ActivityIndicator, } from 'react-native';
+
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useMemo, useState } from 'react';
 import CommonButton from '../../Button/CommonButton';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../../../../../../practice/MyApp/Practice/src/features/StyleSheet/UserScreenStyle'
+
 import UserDrawer from '../../../../Practice/src/features/Navigation/UserDrawer';
+import { useTheme } from '../../../../Practice/src/features/Theme/ThemeContext';
+import UserScreenStyle from '../../../../Practice/src/features/StyleSheet/UserScreenStyle';
 
 type Post = {
   id: number;
@@ -23,6 +26,12 @@ export default function User({ navigation }: Props) {
   const [showDrawer, setShowDrawer] = useState(false);
   const [users, setUsers] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const { colors } = useTheme();
+
+const styles = UserScreenStyle(colors);
+
+  
 
   useEffect(() => {
     const getUsers = async () => {
@@ -60,72 +69,106 @@ export default function User({ navigation }: Props) {
             onHome={() => {
               setShowDrawer(false);
               navigation.navigate('WelcomeScr');
-           }}
+            }}
 
             onClose={() => setShowDrawer(false)}
 
             onSearch={() => {
-
               setShowDrawer(false);
               setShowSearch(true);
-
             }}
 
             onProfile={() => {
-
               setShowDrawer(false);
               navigation.navigate('Profile');
-
             }}
 
           />
 
         )}
 
-        {/* Header onPress={() => navigation.openDrawer()}*/}
+        {/* Header */}
         <View style={styles.header}>
-          <Pressable style={styles.headerIcon} onPress={() => setShowDrawer(true)} >
-            <Ionicons name="menu-outline" size={27} color="#1E293B" />
+
+          <Pressable
+            style={styles.headerIcon}
+            onPress={() => setShowDrawer(true)}
+          >
+            <Ionicons
+              name="menu-outline"
+              size={27}
+              color={colors.icon}
+            />
           </Pressable>
 
-          <Text style={styles.headerTitle}> User App </Text>
+          <Text style={styles.headerTitle}>
+            User App
+          </Text>
 
-          <Pressable style={styles.headerIcon} onPress={()=>navigation.navigate('Profile')} >
-            
-            <Ionicons name="person-circle-outline" size={29} color="#1E293B" />
+          <Pressable
+            style={styles.headerIcon}
+            onPress={() => navigation.navigate('Profile')}
+          >
+            <Ionicons
+              name="person-circle-outline"
+              size={29}
+              color={colors.icon}
+            />
           </Pressable>
+
         </View>
 
         {/* Search */}
         {!showSearch ? (
 
-          <Pressable style={styles.searchTrigger} onPress={() => setShowSearch(true)} >
+          <Pressable
+            style={styles.searchTrigger}
+            onPress={() => setShowSearch(true)}
+          >
 
-            <Text style={styles.searchTriggerText}> Search by name to get started </Text>
+            <Text style={styles.searchTriggerText}>
+              Search by name to get started
+            </Text>
 
-            <Ionicons name="search-outline" size={18} color="#4F46E5" />
+            <Ionicons
+              name="search-outline"
+              size={18}
+              color={colors.primary}
+            />
+
           </Pressable>
 
         ) : (
 
           <View style={styles.searchBox}>
 
-            <Ionicons name="search-outline" size={20} color="#64748B" />
+            <Ionicons
+              name="search-outline"
+              size={20}
+              color={colors.secondaryText}
+            />
 
-
-            <TextInput value={search} onChangeText={setSearch} placeholder="Search by name..." placeholderTextColor="#94A3B8" style={styles.input} autoFocus />
-
+            <TextInput
+              value={search}
+              onChangeText={setSearch}
+              placeholder="Search by name..."
+              placeholderTextColor={colors.placeholder}
+              style={styles.input}
+              autoFocus
+            />
 
             <Pressable
               onPress={() => {
-
                 setSearch('');
                 setShowSearch(false);
-
               }}
             >
 
-              <Ionicons name="close-circle" size={20} color="#94A3B8" />
+              <Ionicons
+                name="close-circle"
+                size={20}
+                color={colors.placeholder}
+              />
 
             </Pressable>
 
@@ -135,61 +178,106 @@ export default function User({ navigation }: Props) {
 
         {/* Users Header */}
         <View style={styles.usersHeader}>
-          <Text style={styles.sectionTitle}> Users </Text>
+
+          <Text style={styles.sectionTitle}>
+            Users
+          </Text>
 
           <View style={styles.countContainer}>
-            <Text style={styles.userCount}> {filteredUsers.length} </Text>
+
+            <Text style={styles.userCount}>
+              {filteredUsers.length}
+            </Text>
+
           </View>
+
         </View>
 
         {/* Users List */}
         {loading ? (
+
           <View style={styles.loadingContainer}>
-            <ActivityIndicator size="large" color="#4F46E5" />
+
+            <ActivityIndicator
+              size="large"
+              color={colors.primary}
+            />
+
           </View>
+
         ) : (
+
           <FlatList
             data={filteredUsers}
             keyExtractor={(item) => item.id.toString()}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={styles.listContent}
+
             renderItem={({ item }) => (
-            <Pressable
+
+              <Pressable
                 onPress={() =>
-                    navigation.navigate('UserDetails', {
-                      user: item,
-                        })
-                    }
-                    style={({ pressed }) => [
-                        styles.userCard,
-                        pressed && styles.userCardPressed,
-                    ]}
-            >
+                  navigation.navigate('UserDetails', {
+                    user: item,
+                  })
+                }
+
+                style={({ pressed }) => [
+                  styles.userCard,
+                  pressed && styles.userCardPressed,
+                ]}
+              >
+
                 <View style={styles.avatar}>
-                  <Text style={styles.avatarText}> {item.name.charAt(0)} </Text>
+
+                  <Text style={styles.avatarText}>
+                    {item.name.charAt(0)}
+                  </Text>
+
                 </View>
 
                 <View style={styles.userInfo}>
-                  <Text style={styles.userName} numberOfLines={1} > {item.name} </Text>
 
-                  <Text style={styles.username}> @{item.username} </Text>
+                  <Text
+                    style={styles.userName}
+                    numberOfLines={1}
+                  >
+                    {item.name}
+                  </Text>
 
-                  <Text style={styles.email} numberOfLines={1} > {item.email} </Text>
+                  <Text style={styles.username}>
+                    @{item.username}
+                  </Text>
+
+                  <Text
+                    style={styles.email}
+                    numberOfLines={1}
+                  >
+                    {item.email}
+                  </Text>
+
                 </View>
 
-                <Ionicons name="chevron-forward" size={20} color="#CBD5E1" />
+                <Ionicons
+                  name="chevron-forward"
+                  size={20}
+                  color={colors.border}
+                />
+
               </Pressable>
+
             )}
           />
+
         )}
 
         {/* Add User Button */}
         <View style={styles.buttonContainer}>
-          <CommonButton
-            onPress={() => navigation.navigate('AddUser')}
-            title="+  Add User"
-            textStyle={styles.userButtonText}
-            buttonStyle={styles.userButton}
+           <CommonButton
+              onPress={() => navigation.navigate('AddUser')}
+              title="+  Add User"
+              textStyle={styles.userButtonText}
+              buttonStyle={styles.userButton}
           />
         </View>
 
@@ -197,4 +285,3 @@ export default function User({ navigation }: Props) {
     </SafeAreaView>
   );
 }
-

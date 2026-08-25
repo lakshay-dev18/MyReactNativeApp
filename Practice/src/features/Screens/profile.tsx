@@ -33,9 +33,9 @@ export default function Profile() {
               <Text style={styles.avatarText}> L </Text>
             </View>
 
-            <Text style={styles.name}> Leanne Graham </Text>
+            <Text style={styles.name}> Lakshay  </Text>
 
-            <Text style={styles.username}> @Bret </Text>
+            <Text style={styles.username}> @lkshy </Text>
 
           </View>
 

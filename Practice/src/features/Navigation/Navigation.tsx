@@ -6,11 +6,13 @@ import BottomTab from '../../../../Practice/src/features/Navigation/BottomTabNav
 import UserDetails from '../../../../Practice/src/features/Screens/UserDetails';
 import UserAdd from '../Screens/UserAdd';
 import Profile from '../../../../Practice/src/features/Screens/profile';
+import { ThemeProvider } from '../../../../Practice/src/features/Theme/ThemeContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function Navigation() {
   return (
+    <ThemeProvider>
     <NavigationContainer>
 
       <Stack.Navigator
@@ -47,5 +49,6 @@ export default function Navigation() {
       </Stack.Navigator>
 
     </NavigationContainer>
+    </ThemeProvider>
   );
 }
